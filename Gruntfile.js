@@ -3,9 +3,7 @@ module.exports = function(grunt) {
 	    pkg: grunt.file.readJSON('package.json'),
 	    karma: {
 		options: {
-		    configFile: 'karma.conf.js',
-		    runnerport: 9999,
-		    browsers: ['Chrome']
+		    configFile: 'karma.conf.js'
 		},
 		continuous: {
 		    singleRun: true,
