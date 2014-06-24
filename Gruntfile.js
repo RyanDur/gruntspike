@@ -7,11 +7,9 @@ module.exports = function(grunt) {
 		},
 		continuous: {
 		    configFile: 'karma.conf.js',
+		    reporters: ['progress'],
 		    singleRun: true,
 		    browsers: ['PhantomJS']
-		},
-		dev: {
-		    reporters: ['progress']
 		}
 	    }
     });
