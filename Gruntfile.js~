@@ -2,10 +2,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
 	    karma: {
-		options: {
+		unit: {
 		    configFile: 'karma.conf.js'
 		},
 		continuous: {
+		    configFile: 'karma.conf.js',
 		    singleRun: true,
 		    browsers: ['PhantomJS']
 		},
