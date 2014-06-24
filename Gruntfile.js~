@@ -15,5 +15,6 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('karma-phantomjs-launcher');
     grunt.registerTask('travis',['karma:continuous']);
 }
