@@ -1,0 +1,11 @@
+describe("Object", function() {
+	var obj;
+
+	beforeEach(function(){
+		obj = Object.init();
+	});
+
+	it("should be able to append stringds", function() {
+		expect(obj.append("hello", "world")).toEqual("hello world");
+	});
+});
