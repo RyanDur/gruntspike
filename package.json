@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "testingGrunt",
   "main": "index.js",
-  "scripts": {
-    "test": "grunt travis --verbose"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -18,5 +15,8 @@
     "karma-growl-reporter": "^0.1.1",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
   }
 }
