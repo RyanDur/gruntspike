@@ -2,10 +2,6 @@ module.exports = function(grunt) {
     grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
 	    karma: {
-		unit: {
-		    configFile: 'karma.conf.js',
-		    autoWatch: true
-		},
 		options: {
 		    configFile: 'karma.conf.js',
 		    runnerport: 9999,
@@ -22,4 +18,5 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-karma');
+    grunt.registerTask('travis',['karma']);
 }
