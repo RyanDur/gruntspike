@@ -1,6 +1,43 @@
 module.exports = function(grunt) {
+    // Project configuration.
+
     grunt.initConfig({
 	    pkg: grunt.file.readJSON('package.json'),
+
+	    // CONFIG ===================================/
+	    watch: {
+		compass: {
+		    files: ['**/*.{scss,sass}'],
+		    tasks: ['compass:dev']
+		},
+		js: {
+		    files: ['js/**/*.js'],
+		    tasks: ['uglify']
+		}
+	    },
+	    compass: {
+		dev: {
+		    options: {
+			sassDir: ['styles/sass'],
+			cssDir: ['styles/css'],
+			environment: 'development'
+		    }
+		},
+		prod: {
+		    options: {
+			sassDir: ['styles/sass'],
+			cssDir: ['styles/css'],
+			environment: 'production'
+		    }
+		}
+	    },
+	    uglify: {
+		all: {
+		    files: {
+			'js/min/main.min.js': ['js/main.js']
+		    }
+		}
+	    },
 	    karma: {
 		unit: {
 		    configFile: 'karma.conf.js'
@@ -14,6 +51,13 @@ module.exports = function(grunt) {
 	    }
     });
 
+    // DEPENDENT PLUGINS =========================/
     grunt.loadNpmTasks('grunt-karma');
-    grunt.registerTask('travis',['karma:continuous']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
+    // TASKS =====================================/
+    grunt.registerTask('travis',['karma:continuous', 'compass:prod', 'uglify']);
+    grunt.registerTask('default', ['compass:dev' , 'uglify', 'watch']);
 }
