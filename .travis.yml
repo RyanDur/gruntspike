@@ -1,6 +1,10 @@
 language: node_js
 node_js:
-  - "0.10"
-before_install: 
-  - gem install compass
-  - npm install -g grunt-cli
+- '0.10'
+before_install:
+- gem install compass
+- npm install -g grunt-cli
+deploy:
+  provider: heroku
+  api_key:
+    secure: e/0HCn4dN6tm/2XJD+2jparKeFys9tDoX5JBl1pDW+hDoxFaXjgAzudh/6+mGXT+svnXZ/kJvfm6OlKezcDKUsFJ/EMohLZkx3jAes/ILLQE3tBq0J3QlV9jUSNnUwuGUw4TpdmhthFvOYBjA2HuJ5rGlF7oT5bZYD46y1dSRrs=
