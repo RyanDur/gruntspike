@@ -8,7 +8,10 @@ module.exports = function(grunt) {
 	    'gh-pages': {
 		options: {
 		    base: '.',
-		    repo: 'https://github.com/RyanDur/RyanDur.github.io.git'
+		    user: {
+			name: 'RyanDur',
+			email: 'ryan.p.durling@gmail.com'
+		    }
 		},
 		src: ['**']
 	    },
