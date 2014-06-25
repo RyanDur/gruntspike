@@ -4,4 +4,3 @@ node_js:
 before_install: 
   - gem install compass
   - npm install -g grunt-cli
-  - npm install karma-phantomjs-launcher
