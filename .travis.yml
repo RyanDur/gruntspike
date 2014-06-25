@@ -2,8 +2,8 @@ language: node_js
 node_js:
 - 0.10.26
 before_install:
-- git config --global user.email "ryan.p.durling@gmail.com"
-- git config --global user.name "RyanDur"
+- git config user.email "ryan.p.durling@gmail.com"
+- git config user.name "RyanDur"
 - gem install compass
 - npm install -g grunt-cli
 after_success:
