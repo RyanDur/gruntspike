@@ -15,6 +15,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-gh-pages": "^0.9.1",
     "grunt-karma": "^0.8.3",
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",

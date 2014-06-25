@@ -5,6 +5,13 @@ module.exports = function(grunt) {
 	    pkg: grunt.file.readJSON('package.json'),
 
 	    // CONFIG ===================================/
+	    'gh-pages': {
+		options: {
+		    base: '.',
+		    repo: 'https://github.com/RyanDur/RyanDur.github.io'
+		},
+		src: ['**']
+	    },
 	    watch: {
 		compass: {
 		    files: ['**/*.{scss,sass}'],
@@ -56,6 +63,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-gh-pages');
 
     // TASKS =====================================/
     grunt.registerTask('travis',['karma:continuous', 'compass:prod', 'uglify']);
