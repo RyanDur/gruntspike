@@ -10,7 +10,7 @@ before_install:
 after_success:
  - git config credential.helper "store --file=.git/credentials"
  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
- - node ./node_modules/grunt-cli/bin/grunt release
+ - grunt gh-pages
 env:
   global:
     secure: GwYqjKy0URM4oiZR8xr6nKB4y/kZZmjgJb8wG8QsSKJ2lRCtAeG0e+jPbk3RULQo029G3T8kNtZnhCMaZZ3INS0j/or+qB89QqErSVtuEUHffmXAYRD1t6PYVZAm9eViUQnkf5wN87TR/ss77N2xUPXcOoBwVGY7gMSLWY2JRJc=
