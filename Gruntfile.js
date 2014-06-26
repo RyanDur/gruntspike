@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 		    },
 		    repo: 'https://github.com/RyanDur/gruntspike.git'
 		},
-		src: ['**']
+		src: ['index.html']
 	    },
 	    watch: {
 		compass: {

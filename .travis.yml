@@ -1,14 +1,15 @@
 language: node_js
 node_js:
- - 0.10.26
+- 0.10.26
 before_install:
- - git config user.email "ryan.p.durling@gmail.com"
- - git config user.name "RyanDur"
- - gem install compass
- - npm install -g grunt-cli
+- git config user.email "ryan.p.durling@gmail.com"
+- git config user.name GH_TOKEN
+- gem install compass
+- npm install -g grunt-cli
 after_success:
- - cat $DEPLOY_KEY > .travis/deploy_key.pem
- - chmod 600 .travis/deploy_key.pem # this key should have push access
- - ssh-add .travis/deploy_key.pem
- - grunt gh-pages
-
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- grunt gh-pages
+env:
+  global:
+    secure: LRCfrDNwULwNqFqZrrgl+Z1+J6yY/W2XEQE1joZ/r91PkD1DBp280wkpWniNYxCK55TaNA99KTlqI5udo0GQv/qmAPTf6dJ8HJBXv6pbc6z0IMBi6YlDKA3lYKwSeGxoW8xH0VDF2tR1x5D7Xj/ieXuX7XoOVXzh9fCO5MzVoWE=
